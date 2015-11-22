@@ -107,8 +107,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Maze.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Pacman.cs" />
+    <Compile Include="PacmanGame.cs" />
+    <Compile Include="Stucture\Block.cs" />
+    <Compile Include="Stucture\Floor.cs" />
+    <Compile Include="Stucture\InlineWall.cs" />
+    <Compile Include="Stucture\MazeWall.cs" />
+    <Compile Include="Stucture\Platform.cs" />
+    <Compile Include="Stucture\Slope.cs" />
+    <Compile Include="Stucture\Wall.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
@@ -136,6 +144,10 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="Pickups\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />

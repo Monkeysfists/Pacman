@@ -11,25 +11,28 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Pacman
 {
-    public class Pacman : Game
+    public class PacmanGame : Game
     {
 
         static void Main()
         {
-            Pacman game = new Pacman();
+            PacmanGame game = new PacmanGame();
             game.Run();
         }
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        public static float AspectRatio;
+
         /// <summary>
         /// This is the main type for your game
         /// </summary>
-        public Pacman()
+        public PacmanGame()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            AspectRatio = graphics.GraphicsDevice.Viewport.AspectRatio;
         }
 
         /// <summary>
