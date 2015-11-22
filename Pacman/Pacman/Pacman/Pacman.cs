@@ -11,15 +11,22 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Pacman
 {
-    /// <summary>
-    /// This is the main type for your game
-    /// </summary>
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public class Pacman : Game
     {
+
+        static void Main()
+        {
+            Pacman game = new Pacman();
+            game.Run();
+        }
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        public Game1()
+        /// <summary>
+        /// This is the main type for your game
+        /// </summary>
+        public Pacman()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
