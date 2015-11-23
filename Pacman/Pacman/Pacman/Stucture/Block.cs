@@ -15,7 +15,7 @@ namespace Pacman
         protected float x, y, z;
         protected Model model;
         protected Matrix world, view, projection;
-        protected Enclosure enclosure; // 
+        protected Enclosure enclosure;
 
         public Block(float x, float y, float z = 0)
         {
@@ -23,12 +23,14 @@ namespace Pacman
             this.y = y;
             this.z = z;
 
+            // set placeholder matrices till first camera update
+            // TODO: move view and projection matrixes to camera class
             world = Matrix.CreateWorld(Position, new Vector3(1, 0, 0), new Vector3(1, 0, 0));
             view = Matrix.CreateLookAt(Vector3.Zero, new Vector3(1, 0, 0), new Vector3(1, 0, 0));
             projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(30), PacmanGame.AspectRatio, 10, 100);
         }
 
-        public void render()
+        public void Render()
         {
             model.Draw(world, view, projection);
         }
