@@ -140,6 +140,11 @@ namespace Pacman
             }
         }
 
+        public Vector2 MousePosition
+        {
+            get { return new Vector2(currentMouseState.X, currentMouseState.Y); }
+        }
+
         public InputMode InputDevice
         {
             get { return inputDevice; }
