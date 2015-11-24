@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\GUIBox.cs" />
     <Compile Include="Maze.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PacmanGame.cs" />
@@ -151,7 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
-    <Folder Include="GUI\" />
     <Folder Include="Pickups\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
