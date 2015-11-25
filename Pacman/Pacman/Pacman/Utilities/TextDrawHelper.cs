@@ -5,13 +5,10 @@ using System.Text;
 
 namespace Pacman
 {
-    public abstract class Wall : Block
+    public static partial class DrawHelper
     {
 
-        public Wall(float x, float y) : base(x, y, 0)
-        {
 
-        }
 
     }
 }

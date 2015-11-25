@@ -118,7 +118,8 @@
     <Compile Include="Stucture\Platform.cs" />
     <Compile Include="Stucture\Slope.cs" />
     <Compile Include="Stucture\Wall.cs" />
-    <Compile Include="Utilities\DrawHelper.cs" />
+    <Compile Include="Utilities\TextDrawHelper.cs" />
+    <Compile Include="Utilities\TextureDrawHelper.cs" />
     <Compile Include="Utilities\HighscoreKeeper.cs" />
     <Compile Include="Utilities\InputHelper.cs" />
     <Compile Include="Utilities\SafeFileHandler.cs" />
