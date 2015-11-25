@@ -7,11 +7,10 @@ using System.Text;
 
 namespace Pacman
 {
-    public class GUIBox
+    public class GUIBox : GUIElement
     {
 
-        protected int x, y,
-                      width, height,
+        protected int width, height,
                       leftSpacing, rightSpacing, topSpacing, bottomSpacing;
         protected BoxStretch stretchMode;
         protected Texture2D sprite;
@@ -19,10 +18,8 @@ namespace Pacman
         public GUIBox(int x, int y, Texture2D sprite)
             : this(x, y, sprite, BoxStretch.None, 0, 0, 0, 0, sprite.Width, sprite.Height) { }
 
-        public GUIBox(int x, int y, Texture2D sprite, BoxStretch stretchMode, int leftSpacing, int rightSpacing, int topSpacing, int bottomSpacing, int width, int height)
+        public GUIBox(int x, int y, Texture2D sprite, BoxStretch stretchMode, int leftSpacing, int rightSpacing, int topSpacing, int bottomSpacing, int width, int height) : base(x,y,"box")
         {
-            this.x = x;
-            this.y = y;
             this.leftSpacing = leftSpacing;
             this.rightSpacing = rightSpacing;
             this.topSpacing = topSpacing;
@@ -33,22 +30,12 @@ namespace Pacman
             this.height = height;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             if (stretchMode == BoxStretch.None)
                 DrawHelper.DrawBox(spriteBatch, sprite, Position, Vector2.Zero);
             else
                 DrawHelper.DrawBox(spriteBatch, sprite, Position, Size, stretchMode, leftSpacing, rightSpacing, topSpacing, bottomSpacing);
-        }
-
-        public Vector2 Position
-        {
-            get { return new Vector2(x, y); }
-            set
-            {
-                x = (int)value.X;
-                y = (int)value.Y;
-            }
         }
 
         public int Width

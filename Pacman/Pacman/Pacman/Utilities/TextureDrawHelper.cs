@@ -8,17 +8,26 @@ using System.Text;
 namespace Pacman
 {
 
-    public enum BoxStretch { None, LeftRight, TopBottom, Corners }
+    public enum BoxStretch { None, LeftRight, TopBottom, Corners, Total }
 
     public static partial class DrawHelper
     {
 
         private static Texture2D pixel;
+        private static GraphicsDevice graphics;
 
-        public static void Init(GraphicsDevice graphics)
+        public static void Init(GraphicsDevice graphicsDevice)
         {
-            pixel = new Texture2D(graphics, 1, 1);
+            graphics = graphicsDevice;
+            pixel = new Texture2D(graphicsDevice, 1, 1);
             pixel.SetData(new[] { Color.White });
+        }
+
+        public static Texture2D GetColoredPixel(Color color)
+        {
+            Texture2D pixel = new Texture2D(graphics, 1, 1);
+            pixel.SetData(new[] { color });
+            return pixel;
         }
         
         public static void DrawBox(SpriteBatch spriteBatch, Texture2D sprite, Vector2 position, Vector2 size, BoxStretch stretchMode = BoxStretch.None, int leftSpacing = 0, int rightSpacing = 0, int topSpacing = 0, int bottomSpacing = 0)
@@ -31,6 +40,7 @@ namespace Pacman
             switch (stretchMode)
             {
                 case BoxStretch.None: spriteBatch.Draw(sprite, position, Color.White); break;
+                case BoxStretch.Total: spriteBatch.Draw(sprite, new Rectangle(x, y, width, height), Color.White); break;
                 case BoxStretch.LeftRight:
                     spriteBatch.Draw(sprite, position, new Rectangle(0, 0, leftSpacing, sprite.Height), Color.White);
                     spriteBatch.Draw(sprite, new Rectangle(x + leftSpacing, y, width - leftSpacing - rightSpacing, sprite.Height), new Rectangle(leftSpacing, 0, sprite.Width - leftSpacing - rightSpacing, sprite.Height), Color.White);
