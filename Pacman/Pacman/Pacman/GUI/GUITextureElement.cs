@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Pacman
@@ -9,12 +8,15 @@ namespace Pacman
 
         protected Texture2D sprite;
 
-        public GUITextureElement(int x, int y, Texture2D sprite, bool isButton) : this(x, y, sprite, Alignment.TopLeft, isButton) { }
+        public GUITextureElement(int x, int y, Texture2D sprite) : this(x, y, sprite, Alignment.TopLeft) { }
 
-        public GUITextureElement(int x, int y, Texture2D sprite, Alignment alignment, bool isButton) : base(x, y, alignment, isButton)
+        public GUITextureElement(int x, int y, Texture2D sprite, Alignment alignment) : base(alignment)
         {
-            this.sprite = sprite;
-            Position = new Vector2(x, y);
+            if (sprite != null)
+            {
+                this.sprite = sprite;
+                Origin = new Vector2(x, y);
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -22,7 +24,7 @@ namespace Pacman
             spriteBatch.Draw(sprite, Position, Color.White);
         }
 
-        public override Vector2 Position
+        public override Vector2 Origin
         {
             get
             {
@@ -81,17 +83,6 @@ namespace Pacman
                         y = (int)value.Y - sprite.Height;
                         break;
                 }
-            }
-        }
-
-        public override Alignment Alignment
-        {
-            get { return alignment; }
-            set
-            {
-                Vector2 pos = Position;
-                alignment = value;
-                Position = pos;
             }
         }
 

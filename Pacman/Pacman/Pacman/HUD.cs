@@ -20,8 +20,7 @@ namespace Pacman
         public void HandleInput(InputHelper input)
         {
             foreach (GUIElement element in guiElements)
-                if(element.IsButton)
-                    element.HandleInput(input);
+                element.HandleInput(input);
         }
 
         public void Update(GameTime gameTime)

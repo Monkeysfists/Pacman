@@ -111,6 +111,7 @@
     <Compile Include="GUI\Button.cs" />
     <Compile Include="GUI\GUIBox.cs" />
     <Compile Include="GUI\GUIElement.cs" />
+    <Compile Include="GUI\GUITextElement.cs" />
     <Compile Include="GUI\GUITextureElement.cs" />
     <Compile Include="GUI\Minimap.cs" />
     <Compile Include="HUD.cs" />

@@ -14,10 +14,10 @@ namespace Pacman
                       leftSpacing, rightSpacing, topSpacing, bottomSpacing;
         protected BoxStretch stretchMode;
 
-        public GUIBox(int x, int y, Texture2D sprite, bool isButton)
-            : this(x, y, sprite, isButton, BoxStretch.None, 0, 0, 0, 0, sprite.Width, sprite.Height) { }
+        public GUIBox(int x, int y, Texture2D sprite)
+            : this(x, y, sprite, BoxStretch.None, 0, 0, 0, 0, sprite.Width, sprite.Height) { }
 
-        public GUIBox(int x, int y, Texture2D sprite, bool isButton, BoxStretch stretchMode, int leftSpacing, int rightSpacing, int topSpacing, int bottomSpacing, int width, int height) : base(x, y, sprite, isButton)
+        public GUIBox(int x, int y, Texture2D sprite, BoxStretch stretchMode, int leftSpacing, int rightSpacing, int topSpacing, int bottomSpacing, int width, int height) : base(x, y, sprite)
         {
             this.leftSpacing = leftSpacing;
             this.rightSpacing = rightSpacing;

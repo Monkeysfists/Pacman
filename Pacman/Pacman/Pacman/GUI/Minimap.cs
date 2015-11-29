@@ -1,8 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Pacman
@@ -13,7 +9,7 @@ namespace Pacman
         protected int paddingX, paddingY;
         protected Texture2D minimapData;
 
-        public Minimap(int x, int y, int paddingX, int paddingY) : base(x, y, null, false, BoxStretch.Total, 0, 0, 0, 0, 0, 0)
+        public Minimap(int x, int y, int paddingX, int paddingY) : base(x, y, null, BoxStretch.Total, 0, 0, 0, 0, 0, 0)
         {
             // TODO: determain if data size can be declared in constructor call or has to be made in constructor body by calling maze data (order of constructing important)
 
