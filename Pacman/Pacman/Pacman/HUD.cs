@@ -20,7 +20,7 @@ namespace Pacman
         public void HandleInput(InputHelper input)
         {
             foreach (GUIElement element in guiElements)
-                if(element.Type == "button")
+                if(element.IsButton)
                     element.HandleInput(input);
         }
 

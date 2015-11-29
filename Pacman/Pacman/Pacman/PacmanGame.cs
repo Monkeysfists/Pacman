@@ -11,6 +11,10 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Pacman
 {
+
+    public enum GameMode { Clasic, Survival }
+    public enum GameState { Splash, Menu, Info, Playing, GameOver, HighscoreTable, Settings }
+
     public class PacmanGame : Game
     {
 

@@ -7,25 +7,23 @@ using System.Text;
 
 namespace Pacman
 {
-    public class GUIBox : GUIElement
+    public class GUIBox : GUITextureElement
     {
 
         protected int width, height,
                       leftSpacing, rightSpacing, topSpacing, bottomSpacing;
         protected BoxStretch stretchMode;
-        protected Texture2D sprite;
 
-        public GUIBox(int x, int y, Texture2D sprite)
-            : this(x, y, sprite, BoxStretch.None, 0, 0, 0, 0, sprite.Width, sprite.Height) { }
+        public GUIBox(int x, int y, Texture2D sprite, bool isButton)
+            : this(x, y, sprite, isButton, BoxStretch.None, 0, 0, 0, 0, sprite.Width, sprite.Height) { }
 
-        public GUIBox(int x, int y, Texture2D sprite, BoxStretch stretchMode, int leftSpacing, int rightSpacing, int topSpacing, int bottomSpacing, int width, int height) : base(x,y,"box")
+        public GUIBox(int x, int y, Texture2D sprite, bool isButton, BoxStretch stretchMode, int leftSpacing, int rightSpacing, int topSpacing, int bottomSpacing, int width, int height) : base(x, y, sprite, isButton)
         {
             this.leftSpacing = leftSpacing;
             this.rightSpacing = rightSpacing;
             this.topSpacing = topSpacing;
             this.bottomSpacing = bottomSpacing;
             this.stretchMode = stretchMode;
-            this.sprite = sprite;
             this.width = width;
             this.height = height;
         }
@@ -35,7 +33,7 @@ namespace Pacman
             if (stretchMode == BoxStretch.None)
                 DrawHelper.DrawBox(spriteBatch, sprite, Position, Vector2.Zero);
             else
-                DrawHelper.DrawBox(spriteBatch, sprite, Position, Size, stretchMode, leftSpacing, rightSpacing, topSpacing, bottomSpacing);
+                DrawHelper.DrawBox(spriteBatch, sprite, Position, Size, stretchMode, leftSpacing, rightSpacing, topSpacing, bottomSpacing); // TODO: fix position for these modes
         }
 
         public int Width
