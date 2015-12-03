@@ -35,16 +35,32 @@ namespace Pacman
             currentMouseState = Mouse.GetState();
         }
 
+        /// <summary>
+        /// Gets whether the key is pressed
+        /// </summary>
+        /// <param name="button">The key to check.</param>
+        /// <returns>Whether the key was just pressed down.</returns>
         public bool IsButtonDown(Keys k)
         {
             return currentKeyboardState.IsKeyDown(k);
         }
 
+        /// <summary>
+        /// Gets whether the key was just pressed down.
+        /// </summary>
+        /// <param name="button">The key to check.</param>
+        /// <returns>Whether the key was just pressed down.</returns>
         public bool IsButtonPresed(Keys k)
         {
             return currentKeyboardState.IsKeyDown(k) && previousKeyboardState.IsKeyUp(k);
         }
 
+
+        /// <summary>
+        /// Gets whether the MouseButton is being held down.
+        /// </summary>
+        /// <param name="button">The MouseButton to check.</param>
+        /// <returns>Whether the MouseButton is being held down.</returns>
         public bool IsMouseButtonDown(MouseButton button)
         {
             switch (button)
@@ -56,6 +72,11 @@ namespace Pacman
             }
         }
 
+        /// <summary>
+		/// Gets whether the MouseButton was just pressed down.
+		/// </summary>
+		/// <param name="button">The MouseButton to check.</param>
+		/// <returns>Whether the MouseButton was just pressed down.</returns>
         public bool IsMouseButtonPresed(MouseButton button)
         {
             switch (button)
