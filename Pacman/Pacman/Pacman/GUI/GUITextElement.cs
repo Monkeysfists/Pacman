@@ -22,6 +22,9 @@ namespace Pacman
             spriteBatch.DrawString(font, text, Position, Color.White);
         }
 
+        /// <summary>
+        /// Get/Set the origin of the given alignment (Top: Left/Middle/Right Centre: Left/Middle/Right Bottom: Left/Middle/Right
+        /// </summary>
         public override Vector2 Origin
         {
             get
@@ -86,6 +89,9 @@ namespace Pacman
             }
         }
 
+        /// <summary>
+        /// Sets or returns the vertical distance in pixels betweeen two consecutive lines of text
+        /// </summary>
         public int LineSpacing
         {
             get { return font.LineSpacing; }
@@ -97,6 +103,9 @@ namespace Pacman
             }
         }
 
+        /// <summary>
+        /// Measures the Size of the given string (Width & Height)
+        /// </summary>
         public virtual Vector2 TextSize
         {
             get { return font.MeasureString(text); }

@@ -24,12 +24,17 @@ namespace Pacman
         
         public abstract Vector2 Origin { get; set; }
 
-        
+        /// <summary>
+        /// Returns current GUI element position
+        /// </summary>
         public Vector2 Position
         {
             get { return new Vector2(x, y); }
         }
 
+        /// <summary>
+        /// Returns and Sets GUI Element Alignement
+        /// </summary>
         public Alignment Alignment
         {
             get { return alignment; }

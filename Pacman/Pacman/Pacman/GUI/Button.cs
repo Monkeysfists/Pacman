@@ -20,6 +20,9 @@ namespace Pacman
             isPressed = input.IsMouseButtonPresed(MouseButton.Left) && BoundingBox.Contains((int)input.MousePosition.X, (int)input.MousePosition.Y);
         }
 
+        /// <summary>
+        /// Creates a boundingBox on the Button
+        /// </summary>
         private Rectangle BoundingBox
         {
             get
@@ -29,6 +32,9 @@ namespace Pacman
             }
         }
 
+        /// <summary>
+        /// Checks if the button is pressed
+        /// </summary>
         public bool IsPressed
         {
             get { return isPressed; }

@@ -23,6 +23,11 @@ namespace Pacman
             pixel.SetData(new[] { Color.White });
         }
 
+        /// <summary>
+        /// Gives One pixel of desired color
+        /// </summary>
+        /// <param name="color"></param>
+        /// <returns>1 colored pixel</returns>
         public static Texture2D GetColoredPixel(Color color)
         {
             Texture2D pixel = new Texture2D(graphics, 1, 1);

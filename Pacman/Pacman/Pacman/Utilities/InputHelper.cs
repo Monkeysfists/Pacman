@@ -24,6 +24,9 @@ namespace Pacman
             currentMouseState = Mouse.GetState();
         }
 
+        /// <summary>
+        /// Updates InputHelper
+        /// </summary>
         public void Update()
         {
             previousControlerState = currentControlerState;
@@ -88,16 +91,29 @@ namespace Pacman
             }
         }
 
+        /// <summary>
+        /// Check if Controller Button is being pressed right now
+        /// </summary>
+        /// <param name="b"></param>
+        /// <returns>Pressed button</returns>
         public bool IsControlerButtonDown(Buttons b)
         {
             return currentControlerState.IsButtonDown(b);
         }
 
+        /// <summary>
+        /// Checks if controller button has been pressed
+        /// </summary>
+        /// <param name="b"></param>
+        /// <returns>Pressed button</returns>
         public bool IsControlerButtonPresed(Buttons b)
         {
             return currentControlerState.IsButtonDown(b) && previousControlerState.IsButtonUp(b);
         }
 
+        /// <summary>
+        /// Detects which button is pressed and changes the movement
+        /// </summary>
         public Vector2 MovementVector
         {
             get
@@ -138,6 +154,9 @@ namespace Pacman
             }
         }
 
+        /// <summary>
+        /// Detects which button is pressed and changes the camera
+        /// </summary>
         public Vector2 CameraVector // TODO: Decide wether camera changes for jaw and pitch should be taken lose or together (i.e. going faster on one axis slows movement along the other axis)
         {
             get
@@ -161,11 +180,17 @@ namespace Pacman
             }
         }
 
+        /// <summary>
+        /// Returns MousePosition
+        /// </summary>
         public Vector2 MousePosition
         {
             get { return new Vector2(currentMouseState.X, currentMouseState.Y); }
         }
 
+        /// <summary>
+        /// Returns Inputdevice
+        /// </summary>
         public InputMode InputDevice
         {
             get { return inputDevice; }

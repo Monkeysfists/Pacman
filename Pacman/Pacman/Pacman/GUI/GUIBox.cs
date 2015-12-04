@@ -36,18 +36,27 @@ namespace Pacman
                 DrawHelper.DrawBox(spriteBatch, sprite, Position, Size, stretchMode, leftSpacing, rightSpacing, topSpacing, bottomSpacing); // TODO: fix position for these modes
         }
 
+        /// <summary>
+        /// Returns Width
+        /// </summary>
         public int Width
         {
             get { return width; }
             set { width = value; }
         }
 
+        /// <summary>
+        /// Returns Height
+        /// </summary>
         public int Height
         {
             get { return height; }
             set { height = value; }
         }
 
+        /// <summary>
+        /// Returns Size/ Set Size
+        /// </summary>
         public Vector2 Size
         {
             get { return new Vector2(width, height); }
