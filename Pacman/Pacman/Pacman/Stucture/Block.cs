@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Pacman
 {
-    public enum Enclosure { Free, Edge, Corner, Side, Middle, Centre }; // used te determain which part of a block should never be drawn, becouse another block ocupies it's entire side
+    public enum Enclosure { Free, Edge, Corner, Side, Middle, Centre }; // used te determain which part of a block should never be drawn, because another block ocupies it's entire side
 
     public abstract class Block
     {
