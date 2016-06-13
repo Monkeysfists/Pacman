@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Pacman.Stucture
+namespace Pacman.Structure
 {
     public class Slope : Floor
     {

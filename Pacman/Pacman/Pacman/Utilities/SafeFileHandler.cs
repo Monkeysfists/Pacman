@@ -79,7 +79,7 @@ namespace Pacman
 
                 for (int i = 0; i < variablePairs.Length; i++)
                 {
-                    string[] keyValue = variablePairs[i].Split('='); // split pairs to seperate keys and values
+                    string[] keyValue = variablePairs[i].Split('='); // split pairs to separate keys and values
                     data.Add(keyValue[0], keyValue[1]); // add to data keeper
                 }
                 return true;
